@@ -1,0 +1,3 @@
+default_context:
+  project_name: 'Demo Tests'
+  project_slug: 'demo-tests'

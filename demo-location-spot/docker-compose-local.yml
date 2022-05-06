@@ -41,14 +41,12 @@ services:
       - ./compose/local/opa/policy:/policy
 # 
 
-# ADAPTER - docker container
 # 
 
-# CACHE - docker container
 # 
 
-# SPOT - docker container
 # 
+# postgres - docker container
   postgres:
     build:
       context: .
@@ -61,8 +59,10 @@ services:
     ports:
       - "5432:5432"
     env_file:
-      - ./.envs/.local/.postgres
+      - envs/local/postgres
+# 
 
+# 
   spot:
     build:
       context: .
@@ -75,9 +75,8 @@ services:
     volumes:
       - ./spot/app:/app:z
     env_file:
-      - .env
-      - ./.envs/.local/.spot
-      - ./.envs/.local/.postgres
+      - envs/local/spot
+      - envs/local/postgres
     environment:
       - LOG_LEVEL=debug
       - D4SERVICE_OAUTH2_CLIENT_ID=d4-client

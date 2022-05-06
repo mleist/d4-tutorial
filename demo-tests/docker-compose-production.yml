@@ -1,0 +1,53 @@
+version: "3.7"
+# created with cookiecutter for project 'Demo Tests'
+
+services:
+# 
+
+
+# 
+  keycloak:
+    image: jboss/keycloak:latest
+    ports:
+      - 8080:8080
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - KEYCLOAK_IMPORT=/tmp/realm.json
+    volumes:
+      - ./realm.json:/tmp/realm.json
+# 
+
+# 
+  opa:
+    image: openpolicyagent/opa:latest
+    ports:
+      - 8181:8181
+    command:
+      - "run"
+      - "--server"
+      - "--log-level=debug"
+      - "/policy/auth.rego"
+    volumes:
+      - ./policy:/policy
+# 
+
+# 
+  spot:
+    image: '${DOCKER_IMAGE_SPOT?Variable not set}:${TAG-latest}'
+    env_file:
+      - .env
+    environment:
+      - SERVER_NAME=${DOMAIN?Variable not set}
+      - SERVER_HOST=https://${DOMAIN?Variable not set}
+      # Allow explicit env var override for tests
+    build:
+      context: ./spot
+      dockerfile: compose/tests/spot/python3.9-slim.dockerfile
+      args:
+        INSTALL_DEV: ${INSTALL_DEV-false}
+    ports:
+      - "${D4SERVICE_SPOT_PORT}:9040"
+# 
+
+# 

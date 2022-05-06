@@ -82,18 +82,79 @@ Options:
   --help                     Show this message and exit.
 ```
 
+
+
+### Documentation
+
+```bash
+$ cruft create    --no-input \
+                  --skip envs \
+                  --config-file cookiecutter-demo-doc.yaml \
+                  --output-dir . \
+                  https://github.com/mleist/d4/
+ [SUCCESS]: Project initialized, keep up the good work!
+```
+
+```bash
+$ ls -1 demo-docs/docs/
+01_very_first_tests.md
+02_first_docker_compose.md
+03_first_testing_infrastructure.md
+04_build_test_companies.md
+```
+
+
+
+### Tests
+
+```bash
+$ cruft create    --no-input \
+                  --skip envs \
+                  --config-file cookiecutter-demo-tests.yaml \
+                  --output-dir . \
+                  https://github.com/mleist/d4/
+ [SUCCESS]: Project initialized, keep up the good work!
+```
+
+```bash
+$ cd demo-tests/
+$ pytest .
+[...]
+collecting ...
+ adapter/tests/test_01.py ✓
+ tests/adapter/auth/test_01.py ✓✓✓
+ tests/adapter/base/test_01.py ✓
+ tests/spot/auth/test_01.py ✓✓
+ tests/spot/base/test_01.py ✓✓
+
+Results (54.12s):
+       9 passed
+```
+
+
+
+### First SPOT Demo
+
 ```bash
 $ cruft create --no-input \
-     --config-file cookiecutter-demo-location-spot.yaml \
-     --output-dir . \
-     https://github.com/mleist/d4/
+                                              --skip envs \
+                                              --config-file cookiecutter-demo-location-spot.yaml \
+                                              --output-dir . \
+                                              https://github.com/mleist/d4/
  [SUCCESS]: Project initialized, keep up the good work!
- 
 ```
 
 ```bash
 $ cd demo-location-spot/
 $ docker-compose --file docker-compose-local.yml up -d
+$ docker-compose --file docker-compose-local.yml up -d
+[...]
+[+] Running 5/5
+ ⠿ Network demo-location-spot_default       Created                                                                                                                                                                                0.0s
+ ⠿ Container demo-location-spot-keycloak-1  Started                                                                                                                                                                                0.7s
+ ⠿ Container demo-location-spot-postgres-1  Started                                                                                                                                                                                0.7s
+ ⠿ Container demo-location-spot-opa-1       Started                                                                                                                                                                                1.2s
+ ⠿ Container demo-location-spot-spot-1      Started
 [...]
 ```
 
