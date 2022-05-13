@@ -7,6 +7,7 @@ d4-tutorial provides an application of d4 to learn how to use d4.
 ### optionally create a virtual environment like
 
 ```bash
+$ mkdir ~/.virtualenvs
 $ python3 -m venv ~/.virtualenvs/d4-tutorial
 $ source ~/.virtualenvs/d4-tutorial/bin/activate[.fish|.csh]
 $ pip --version
@@ -82,6 +83,10 @@ Options:
   --help                     Show this message and exit.
 ```
 
+```bash
+$ git clone https://github.com/mleist/d4-tutorial.git
+$ cd d4-tutorial/
+```
 
 
 ### Documentation
