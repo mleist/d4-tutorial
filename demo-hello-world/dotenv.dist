@@ -1,0 +1,4 @@
+DOMAIN=example.com
+DOCKER_IMAGE_CACHE=d4_demo-hello-world_cache:latest
+D4SERVICE_CACHE_URI=http://cache:9020
+D4SERVICE_CACHE_PORT=9020

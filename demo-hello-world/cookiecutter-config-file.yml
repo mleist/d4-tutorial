@@ -1,0 +1,3 @@
+default_context:
+  project_name: 'Demo Hello World'
+  project_slug: 'demo-hello-world'
