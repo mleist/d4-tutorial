@@ -1,6 +1,6 @@
 # d4 - Tutorial
 
-d4-tutorial provides an application of d4 to learn how to use d4. 
+d4-tutorial provides an application of d4 to learn how to use [d4](https://github.com/mleist/d4). 
 
 ## 1st Steps - how to use it in a virtual python environment.
 
