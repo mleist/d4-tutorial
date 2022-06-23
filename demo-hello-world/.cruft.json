@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/mleist/d4/",
-  "commit": "239e4557b9be2658be50a91a4fd2430a7444c969",
+  "commit": "d3f4a5d55f350a0d9192fa134ee25314b5a52d45",
   "checkout": null,
   "context": {
     "cookiecutter": {
