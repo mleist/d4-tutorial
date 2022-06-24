@@ -13,7 +13,7 @@ $ cd d4-tutorial/
 ```
 
 
-## 2. create new hello world (optional)
+## 2. create new TLS based proxy (optional)
 
 ```bash
 $ cruft create \
