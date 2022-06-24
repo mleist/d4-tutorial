@@ -32,6 +32,11 @@ $ cruft create \
 $ cd demo-hello-world/
 $ cp dotenv.dist .env
 $ cp -a envs.dist envs
+```
+
+Please adjust the environment
+
+```bash
 $ docker-compose --file docker-compose-local.yml build --no-cache
 $ docker-compose --file docker-compose-local.yml down
 $ docker-compose --file docker-compose-local.yml up -d
