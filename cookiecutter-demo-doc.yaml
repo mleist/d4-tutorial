@@ -33,8 +33,8 @@ default_context:
   d4service_adapter_port: 9010
   d4service_cache_uri: http://cache:9020
   d4service_cache_port: 9020
-  d4service_proxy_uri: http://proxy:9030
-  d4service_proxy_port: 9030
+  d4service_proxy_http_port: 9080
+  d4service_proxy_https_port: 9443
   d4service_spot_uri: http://spot:9040
   d4service_spot_port: 9040
   d4service_spot_name: spot_acme
