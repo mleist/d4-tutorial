@@ -9,6 +9,7 @@ default_context:
   enable_mq_db: "n"
   enable_postgres: "n"
   enable_proxy: "y"
+  enable_proxy_cert_manager": "y"
   enable_spot: "n"
   enable_ui: "n"
   enable_test_opa: "n"
@@ -48,6 +49,7 @@ default_context:
   d4service_postgres_port: "5432"
   d4service_proxy_http_port: "9080"
   d4service_proxy_https_port: "9443"
+  d4service_proxy_cert_email: "me@example.com",
   d4service_spot_uri: "http://spot:9040"
   d4service_spot_port: "9040"
   d4service_spot_name: "spot_{{cookiecutter.project_slug}}"
@@ -63,6 +65,7 @@ default_context:
   docker_image_mq_db: "d4_{{cookiecutter.project_slug}}_mq_db:latest"
   docker_image_postgres: "d4_{{cookiecutter.project_slug}}_postgres:latest"
   docker_image_proxy: "d4_{{cookiecutter.project_slug}}_proxy:latest"
+  docker_image_proxy_cert_manager: "d4_{{cookiecutter.project_slug}}_proxy_cert_manager:latest"
   docker_image_spot: "d4_{{cookiecutter.project_slug}}_spot:latest"
   docker_image_ui: "d4_{{cookiecutter.project_slug}}_ui:latest"
   docker_test_image_keycloak: "jboss/keycloak:latest"
