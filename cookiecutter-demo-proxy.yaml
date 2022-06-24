@@ -9,7 +9,7 @@ default_context:
   enable_mq_db: "n"
   enable_postgres: "n"
   enable_proxy: "y"
-  enable_proxy_cert_manager": "y"
+  enable_proxy_cert_manager: "y"
   enable_spot: "n"
   enable_ui: "n"
   enable_test_opa: "n"
